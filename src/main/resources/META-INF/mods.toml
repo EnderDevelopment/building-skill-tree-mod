@@ -1,0 +1,81 @@
+# This is an example mods.toml file. It contains the data relating to the loading mods.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# Note that there are a couple of TOML lists in this file.
+#
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+modLoader="javafml" #mandatory
+
+# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
+loaderVersion="[14.23.5.2859,)"
+
+license="All rights reserved"
+
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL="https://github.com/yourusername/yourmod/issues"
+
+# A list of mods - how many allowed here is determined by the individual mod loader
+[[mods]] #mandatory
+
+# The modid of the mod
+modId="skilltreemod" #mandatory
+
+# The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
+version="${file.jarVersion}" #mandatory
+
+# A display name for the mod
+displayName="Skill Tree Mod" #mandatory
+
+# A URL to query for updates for this mod. See the JSON update specification <here>
+# updateJSONURL="https://raw.githubusercontent.com/yourusername/yourmod/1.12.2/update.json" #optional
+
+# A URL for the "homepage" for this mod, displayed in the mod UI
+displayURL="https://github.com/yourusername/yourmod" #optional
+
+# A file name (in the root of the mod JAR) containing a logo for display
+displayLogoFile="logo.png" #optional
+
+# A text field displayed in the mod UI
+displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
+
+# A text field displayed in the mod UI
+credits="Thanks to the Minecraft Forge team and the community!" #optional
+
+# A text field displayed in the mod UI, for the "Demo" button and for the header shown when the "new" version button is pressed
+# demoText="This is a demo version of the mod." #optional
+
+# A text field displayed in the mod UI
+# authors="Your Name" #optional
+
+# The description text for the mod (multi line!)description="""
+A Minecraft mod that adds a skill tree system similar to Passive Skill Trees.
+Includes a building tool to customize the skill tree, skill points displayed above the hotbar based on skill level, and skill points earned through skill bottles, mob kills, or custom NPC kills.
+Full hotbar indicates an available skill point for the skill tree, with skill level increasing with each full hotbar achieved.
+"""
+
+# A dependency - use the . to indicate dependency for a specific modid. The environment (side) will be both.
+# The version range is optional.
+[[dependencies.skilltreemod]] #optional
+
+# The modid of the dependency
+modId="forge" #mandatory
+
+# Does this dependency have to exist - if not, ordering below must be specified
+mandatory=true #mandatory
+
+# The version range of the dependency
+versionRange="[14.23.5.2859,)" #mandatory
+
+# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+ordering="NONE"
+
+# Side this dependency is applied on - BOTH, CLIENT or SERVER
+side="BOTH"
+
+# Here's another dependency
+[[dependencies.skilltreemod]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.12.2]"
+ordering="NONE"
+side="BOTH"
